@@ -62,3 +62,4 @@ typings/
 
 .DS_Store
 
+k6_load_testing.js
