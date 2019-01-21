@@ -1,13 +1,13 @@
 {
-  "name": "FEC-Ammar-Proxy",
+  "name": "SDC-David-Proxy",
   "version": "1.0.0",
   "description": "practice on proxy server init for HR bootcamp",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server.js"
+    "start": "nodemon ./server.js"
   },
   "keywords": [],
-  "author": "ammar alnatsheh <ammar.alnatsheh@gmail.com>",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
