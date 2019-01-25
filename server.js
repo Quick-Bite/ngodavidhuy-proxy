@@ -26,7 +26,66 @@ app.get('/restaurants/:id', (req, res) => {
 
 app.get('/restaurants/:id/suggestions', (req, res) => {
   // get all the Suggestions from the suggestions server
-  httpReq.get(`http://localhost:3005/restaurants/${req.params.id}/suggestions`)
+  httpReq.get(`http://52.14.173.200/restaurants/${req.params.id}/suggestions`)
+  .then(function (req) {
+    res.status(200).send(req.data);
+  })
+  .catch(function (error) {
+    res.status(501).send(error);
+  });
+
+});
+
+app.get('/restaurants/:id/reviews', (req, res) => {
+  // get all the reviews from the reviews server
+  httpReq.get(`http://ec2-54-153-119-40.us-west-1.compute.amazonaws.com/restaurants/${req.params.id}/reviews`)
+  .then(function (req) {
+    res.status(200).send(req.data);
+  })
+  .catch(function (error) {
+    res.status(501).send(error);
+  });
+
+});
+
+app.get('/restaurants/:id/profiles', (req, res) => {
+  // get all the profile from profile server
+  httpReq.get(`http://52.15.232.64/restaurants/${req.params.id}/profiles`)
+  .then(function (req) {
+    res.status(200).send(req.data);
+  })
+  .catch(function (error) {
+    res.status(501).send(error);
+  });
+});
+
+app.get('/restaurants/:id/menu-items', (req, res) => {
+  // get all the menu items from the menu server
+  httpReq.get(`http://54.241.249.88/restaurants/${req.params.id}/menu-items`)
+  .then(function (req) {
+    res.status(200).send(req.data);
+  })
+  .catch(function (error) {
+    res.status(501).send(error);
+  });
+
+});
+
+app.get('/restaurants/:id/menu-items/:itemId', (req, res) => {
+  // get all the menu item Id from the menu server
+  httpReq.get(`http://54.241.249.88/restaurants/${req.params.id}/menu-items/${req.params.itemId}`)
+  .then(function (req) {
+    res.status(200).send(req.data);
+  })
+  .catch(function (error) {
+    res.status(501).send(error);
+  });
+
+});
+
+app.get('/restaurants/:id/order', (req, res) => {
+  // get all the menu order from the menu server
+  httpReq.get(`http://54.241.249.88/restaurants/${req.params.id}/order`)
   .then(function (req) {
     res.status(200).send(req.data);
   })
